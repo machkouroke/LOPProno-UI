@@ -1,0 +1,70 @@
+#row-63651be03928ba0189be8630-3 {
+    margin-bottom:0
+}
+
+#row-63651be03928ba0189be8630-3 .row-content {
+    padding-bottom:0
+}
+
+#row-63651be03928ba0189be8630-7 {
+    margin-top: 100px;
+    margin-bottom:140px
+}
+
+#row-63651be03928ba0189be8630-7 .row-content {
+    background-color: rgb(230, 243, 236);
+    background-image: url(http://site-club-de-football.e-monsite.com/medias/images/foot-entete.jpg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size:cover
+}
+
+@media (min-width: 992px) {
+    #row-63651be03928ba0189be8630-7 .row-content {
+        height:600px
+    }
+
+    #row-63651be03928ba0189be8630-7 {
+        width:calc(100% - 0px)
+    }
+}
+
+#row-63651be03928ba0189be8630-8 {
+    margin-top:80px
+}
+
+#row-63651be03928ba0189be8630-10 {
+    margin-bottom: 80px;
+    padding-top: 80px;
+    padding-bottom:80px
+}
+
+#row-63651be03928ba0189be8630-5 {
+    margin-top: 80px;
+    margin-bottom:80px
+}
+
+#row-63651be03928ba0189be8630-4 .row-content {
+    padding-top:0
+}
+
+#row-63651be03928ba0189be8630-2 {
+    margin-bottom:0
+}
+
+#row-63651be03928ba0189be8630-2 .row-content {
+    padding-top:40px
+}
+
+#row-63651be03928ba0189be8630-9 {
+    margin-bottom:80px
+}
+
+#row-63651be03928ba0189be8630-1 {
+    margin-bottom:0
+}
+
+#row-63651be03928ba0189be8630-1 .row-content {
+    padding-top: 40px
+}
+
