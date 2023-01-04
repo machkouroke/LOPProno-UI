@@ -68,3 +68,27 @@
     padding-top: 40px
 }
 
+.bar_100,
+.bar_draw,
+.bar_home {
+    height: 5px;
+    border-radius: .25rem;
+}
+
+.bar_100{
+    background-color: red;
+    width: 150px;
+}
+
+.bar_draw{
+    display:block;
+    background-color: white;
+}
+
+.bar_home{
+    display: block;
+    background-color: dodgerblue;
+}
+
+
+

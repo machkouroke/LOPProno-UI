@@ -1,7 +1,7 @@
 function league_di(cptname,cptlogo){
     return `
         
-        <h3>
+        <h3 class="league_name">
             <img src="${cptlogo}" style="height:50px;" alt="">
             ${cptname}
         </h3>
@@ -23,9 +23,9 @@ function hello(date,cptname,cptlogo,home_name,home_logo,away_name,away_logo) {
             <div>
             <td style="width:30%;"><img src="${home_logo}" style="height:20px;" alt=""> ${home_name}</td>
             <td>
-            <div style="width: 150px;height: 5px;background-color: red;border-radius: .25rem;">
-                <span style="display:block;width: 92%;height: 5px;background-color: green;border-radius: .25rem;">
-                    <span style="display:block;width: 43%;height: 5px;background-color: blue;border-radius: .25rem;"></span>
+            <div class="bar_100">
+                <span class="bar_draw" style="width: 92%;">
+                    <span class="bar_home" style="width: 43%;"></span>
                 </span>
             </div>
             </td>
