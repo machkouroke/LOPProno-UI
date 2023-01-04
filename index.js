@@ -1,3 +1,16 @@
+loader = document.getElementById("loader")
+function displayLoading() {
+    loader.classList.add("display");
+    // to stop loading after some time
+    setTimeout(() => {
+        loader.classList.remove("display");
+    }, 5000);
+}
+
+function hideLoading() {
+    loader.classList.remove("display");
+}
+
 function league_di(cptname,cptlogo){
     return `
         
@@ -40,9 +53,12 @@ function hello(date,cptname,cptlogo,home_name,home_logo,away_name,away_logo) {
 }
 
 window.addEventListener('load', () => {
-
+    displayLoading()
     fetch('https://lopronostic-api.herokuapp.com/test').
-    then(res => res.json()).
+    then(res => {
+        loader.classList.remove('display');
+        return res.json()
+    }).
     then(json => {
         json.league.forEach((l)=> {
             document.getElementById("leagues").innerHTML += league_di(l.name, l.emblem)
