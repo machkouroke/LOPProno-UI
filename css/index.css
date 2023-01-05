@@ -113,3 +113,14 @@
     }
 }
 
+.percentages{
+    position: relative;
+}
+
+.percentage{
+    position: absolute;
+    top: 5px;
+    font-size: 12px
+}
+
+

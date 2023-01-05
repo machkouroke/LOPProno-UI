@@ -36,6 +36,13 @@ function hello(date,cptname,cptlogo,home_name,home_logo,away_name,away_logo) {
             <div>
             <td style="width:30%;"><img src="${home_logo}" style="height:20px;" alt=""> ${home_name}</td>
             <td>
+            
+            <div class="percentages" style="background-color: red; position:relative">
+            
+                <span class="percentage percentage_home" style="left: 0;">43%</span>
+                <span class="percentage percentage_draw" style="left: 43%;">49%</span>
+                <span class="percentage percentage_away" style="right: 0;">8%</span>
+            </div>
             <div class="bar_100">
                 <span class="bar_draw" style="width: 92%;">
                     <span class="bar_home" style="width: 43%;"></span>
