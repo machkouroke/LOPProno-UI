@@ -61,7 +61,7 @@ function hello(date, cptname, cptlogo, home_name, home_logo, away_name, away_log
 
 window.addEventListener('load', () => {
     displayLoading()
-    fetch('https://lopronostic-api.herokuapp.com/test').
+    fetch('https://lopronostic-api.herokuapp.com/prono').
         then(res => {
             loader.classList.remove('display');
             return res.json()
