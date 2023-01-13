@@ -11,7 +11,7 @@ function hideLoading() {
     loader.classList.remove("display");
 }
 
-function league_di(cptname,cptlogo){
+function league_di(cptname, cptlogo) {
     return `
         
         <h3 class="league_name">
@@ -25,23 +25,23 @@ function league_di(cptname,cptlogo){
         </table>
     `
 }
-function hello(date,cptname,cptlogo,home_name,home_logo,away_name,away_logo) {
+function hello(date, cptname, cptlogo, home_name, home_logo, away_name, away_logo, percentage) {
     var d = new Date(date);
     const weekday = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
     // console.log(d.getUTCHours());
     return `
         <tr>
-            <td style="width:10%;">${weekday[d.getUTCDay()]+ " "+d.getDate()+"/"+(d.getUTCMonth()+1)+"/"+d.getUTCFullYear()}</td>
-            <td style="width: 10%;">${d.getHours()+":"+d.getUTCMinutes()}</td>
+            <td style="width:10%;">${weekday[d.getUTCDay()] + " " + d.getDate() + "/" + (d.getUTCMonth() + 1) + "/" + d.getUTCFullYear()}</td>
+            <td style="width: 10%;">${d.getHours() + ":" + d.getUTCMinutes()}</td>
             <div>
             <td style="width:30%;"><img src="${home_logo}" style="height:20px;" alt=""> ${home_name}</td>
             <td>
             
             <div class="percentages" style="background-color: red; position:relative">
             
-                <span class="percentage percentage_home" style="left: 0;">43%</span>
-                <span class="percentage percentage_draw" style="left: 43%;">49%</span>
-                <span class="percentage percentage_away" style="right: 0;">8%</span>
+                <span class="percentage percentage_home" style="left: 0;">${percentage.win}%</span>
+                <span class="percentage percentage_draw" style="left: ${percentage.win}%;">${percentage.draw}%</span>
+                <span class="percentage percentage_away" style="right: 0;">${percentage.lose}%</span>
             </div>
             <div class="bar_100">
                 <span class="bar_draw" style="width: 92%;">
@@ -62,18 +62,25 @@ function hello(date,cptname,cptlogo,home_name,home_logo,away_name,away_logo) {
 window.addEventListener('load', () => {
     displayLoading()
     fetch('https://lopronostic-api.herokuapp.com/test').
-    then(res => {
-        loader.classList.remove('display');
-        return res.json()
-    }).
-    then(json => {
-        json.league.forEach((l)=> {
-            document.getElementById("leagues").innerHTML += league_di(l.name, l.emblem)
-        });
-        json.matches.forEach((match) => {
-            document.getElementById(match.competition.name).innerHTML += hello(match.date,match.competition.name,match.competition.logo,match.homeTeam.name,match.homeTeam.logo,match.awayTeam.name,match.awayTeam.logo)
-        })
+        then(res => {
+            loader.classList.remove('display');
+            return res.json()
+        }).
+        then(json => {
+            json.league.forEach((l) => {
+                document.getElementById("leagues").innerHTML += league_di(l.name, l.emblem)
+            });
+            json.matches.forEach((match) => {
+                document.getElementById(match.competition.name).innerHTML += hello(match.date,
+                    match.competition.name,
+                    match.competition.logo,
+                    match.homeTeam.name,
+                    match.homeTeam.logo,
+                    match.awayTeam.name,
+                    match.awayTeam.logo,
+                    { "win": 70.66, "draw": 20.33, "lose": 7 })
+            })
 
-    })
+        })
 
 })
